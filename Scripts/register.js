@@ -4,26 +4,53 @@ let pets=[];//empty array
 
 //object literal
 let pet1={
-    name:"Moka",
-    age:1,
-    gender:"Female",
-    breed:"Mixed"
+    name:"Thanos",
+    age:"2",
+    gender:"Male",
+    breed:"German Shephard",
+    temperment:"Playful",
+    color:"Brindle",
+    weight:"85 lbs"
 }
 
 let pet2={
-    name:"Macchi",
-    age:2,
-    gender:"Male",
-    breed:"Boxer"
+    name:"Gamora",
+    age:"2",
+    gender:"Female",
+    breed:"German Shephard",
+    temperment:"Anxious",
+    color:"Brindle",
+    weight:"75 lbs"
 }
 
-//push pets into the array
-pets.push(pet1,pet2);
+    let pet3={
+    name:"Ryder",
+    age:"12",
+    gender:"Male",
+    breed:"Beagel mix",
+    temperment:"Calm",
+    color:"Brindle",
+    weight:"25 lbs"
+    }
+    let pet4={
+        name:"Nebula",
+        age:"2",
+        gender:"Female",
+        breed:"Austrialian Shephard",
+        temperment:"Friendly",
+        color:"Merle",
+        weight:"45 lbs"
+        }
 
-function displayNames(){
+//push pets into the array
+pets.push(pet1,pet2,pet3,pet4);
+
+    function displayNames(){
     console.log("Total pets = " + pets.length);
-    console.log(pets[0].name);
-    console.log(pets[1].name);
+    for(let i=0;i<pets.length;i++){
+         //console.log(pets[i].name);
+         document.getElementById("petsNames").innerHTML+="<p> " +pets[i].name + "</p>";
+    }  
 }
 
 displayNames();

@@ -1,13 +1,16 @@
 {
-	"folders": [
-		{
-			"path": "../104"
-		},
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "petsalon104"
-	}
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "css.autoValidation": "Always"
+    },
+    "extensions": {
+        "recommendations": [
+            "ecmel.vscode-html-css",
+            "sidthesloth.html5-boilerplate"
+        ]
+    }
 }
