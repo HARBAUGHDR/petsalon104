@@ -18,6 +18,15 @@
     </header>
     <main>
         <h2>Register</h2>
+        <div class="form-control">
+            <label for="txtType">Type</label>
+            <select id="TxtType">
+                <option value=""></option>---Choose your Pet---</option>
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+                <option value="other">Other</option>
+                </select>
+        </div>
         <div class="register-form">
             <div class="form-control">
                 <label>Name:</label>
@@ -40,15 +49,16 @@
                 <input type="text">
             </div>
             <div class="form-control">
-                <label>Color;</label>
+                <label>Color:</label>
+                <input type="text">
             </div>
             <div class="form-control">
                 <label>Weight:</label>
-                <input type="number">
+                <input type="number" + lbs>
             </div>
         </div>
         <div>
-            <button onclick="Register"()>Register</button>
+            <button onclick="Register()">Register</button>
         </div>
         <div id="petsNames">
 
