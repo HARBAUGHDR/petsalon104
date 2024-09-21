@@ -1,63 +1,61 @@
-let pets=[];//empty array
-// create the Constructor
-//<-------parameters are local------>
-function Pet(name,age,gender,breed,color,temperment,weight){
-    //property=parameters
-    this.name=name;
-    this.age=age;
-    this.gender=gender;
-    this.breed=breed;
-    this.color=color;
-    this.temperment=temperment;
-    this.weight=weight;
+// Store pets in an array
+let pets = [];
+
+// Constructor for Pet object
+function Pet(name, age, gender, breed, color, temperment, weight, type) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.breed = breed;
+    this.color = color;
+    this.temperment = temperment;
+    this.weight = weight;
+    this.type = type;
 }
 
-//get the inputs
-let inputName = document.getElementById("txtName");
-let inputAge = document.getElementById("txtAge");
-let inputGender = document.getElementById("txtGender");
-let inputTemperment = document.getElementById("txtTemperment");
-let inputWeight = document.getElementById("txtWeight");
-let inputColor = document.getElementById("txtColor");
+// Function to register the pet
+function registerPet() {
+    const name = $('#txtName').val();
+    const age = $('#txtAge').val();
+    const gender = $('#txtGender').val();
+    const breed = $('#txtBreed').val();
+    const color = $('#txtColor').val();
+    const temperment = $('#txtTemperment').val();
+    const weight = $('#txtWeight').val();
+    const type = $('#petType').val();
 
-function register(){
-    console.log("Register function");
-    console.log(inputName.value,inputWeight.value,inputColor.value,inputAge.value,inputGender.value,inputBreed.value,inputTemperment.value)
-//creat an obj
-let newPet = new Pet(inputName.value,inputWeight.value,inputColor.value,inputAge.value,inputGender.value,inputBreed.value,inputTemperment.value);
-pets.push(newPet)
-//display on the console the new pet
-console.log(newPet); 
+    // Create a new pet object
+    const newPet = new Pet(name, age, gender, breed, color, temperment, weight, type);
+    pets.push(newPet); // Add pet to the pets array
+
+    // Display the newly added pet
+    displayPets();
+    
+    // Clear form after submission
+    $('#petForm')[0].reset();
 }
 
+// Function to display registered pets
+function displayPets() {
+    const petList = $('#petList');
+    petList.empty(); // Clear the list
 
-function init(){
-    console.log("Init fn");//start the carousel of images
-    let Gamora = new Pet("Gamora,75,Brindle,2,female,German,playful");
-    pets.push(Gamora);
-    let Thanos = new Pet("Thanos,100,Brindle,6,German,Timid");
-    pets.push(Thanos);
-    let Ryder = new Pet("Ryder,45,Black,13,Beagle,Happy");
-    pets.push(Ryder);
-    let Nebula = new Pet("Nebula,45,Merle,3,Aussie,Energetic");
-    pets.push(Nebula);
-    console.log("init fn");
+    // Loop through the pets array and display each pet
+    pets.forEach((pet, index) => {
+        const petItem = `
+            <li class="list-group-item">
+                <strong>${pet.name}</strong> - ${pet.breed} (${pet.age} years old, ${pet.type})
+                <p>Color: ${pet.color}, Temperament: ${pet.temperment}, Weight: ${pet.weight} lbs</p>
+            </li>
+        `;
+        petList.append(petItem);
+    });
 }
 
-
-window.onload=init;//waits to register the line
-
-console.log("last line");
-
-
-
-
-
-
- 
-
-
-
-
-
-
+// jQuery function to handle form submission
+$(document).ready(function() {
+    $('#petForm').submit(function(event) {
+        event.preventDefault(); // Prevent form submission
+        registerPet(); // Register the pet
+    });
+});
