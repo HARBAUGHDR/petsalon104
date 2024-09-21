@@ -1,56 +1,41 @@
 console.log("Register");
-
 let pets=[];//empty array
 
-//object literal
-let pet1={
-    name:"Thanos",
-    age:"2",
-    gender:"Male",
-    breed:"German Shephard",
-    temperment:"Playful",
-    color:"Brindle",
-    weight:"85 lbs"
+//get the inputs
+let inputName = document.getElementById("txtName")
+let inputAge = document.getElementById("txtAge")
+let inputGender = document.getElementById("txtGender")
+let inputTemperment = document.getElementById("txtTemperment")
+let inputWeight = document.getElementById("txtWeight")
+let inputColor = document.getElementById("txtColor")
+
+function register(){
+    console.log("Register function");
+    console.log(inputName.value,inputWeight.value,inputColor.value,inputAge.value,inputGender.value,inputBreed.value,inputTemperment.value)
+//creat an obj
+//get the values 
+//display on the console the new pet
 }
 
-let pet2={
-    name:"Gamora",
-    age:"2",
-    gender:"Female",
-    breed:"German Shephard",
-    temperment:"Anxious",
-    color:"Brindle",
-    weight:"75 lbs"
+
+function init(){
+    console.log("Init fn");//start the carousel of images
 }
 
-    let pet3={
-    name:"Ryder",
-    age:"12",
-    gender:"Male",
-    breed:"Beagel mix",
-    temperment:"Calm",
-    color:"Brindle",
-    weight:"25 lbs"
-    }
-    let pet4={
-        name:"Nebula",
-        age:"2",
-        gender:"Female",
-        breed:"Austrialian Shephard",
-        temperment:"Friendly",
-        color:"Merle",
-        weight:"45 lbs"
-        }
 
-//push pets into the array
-pets.push(pet1,pet2,pet3,pet4);
+window.onload=init;//waits to register the line
 
-    function displayNames(){
-    console.log("Total pets = " + pets.length);
-    for(let i=0;i<pets.length;i++){
-         //console.log(pets[i].name);
-         document.getElementById("petsNames").innerHTML+="<p> " +pets[i].name + "</p>";
-    }  
-}
+console.log("last line");
 
-displayNames();
+
+
+
+
+
+ 
+
+
+
+
+
+
